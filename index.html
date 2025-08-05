@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendSphere - Tendencias en Redes Sociales</title>
-    <meta name="description" content="Descubre las últimas tendencias en redes sociales, estrategias de marketing digital y contenido viral que está transformando el mundo digital.">
-    <meta name="keywords" content="tendencias, redes sociales, marketing digital, contenido viral, Instagram, TikTok, YouTube">
+    <title>TechSphere - Inteligencia Artificial y Tecnología</title>
+    <meta name="description" content="Descubre las últimas tendencias en Inteligencia Artificial, tecnología emergente, innovaciones disruptivas y el futuro digital que está transformando el mundo.">
+    <meta name="keywords" content="inteligencia artificial, IA, machine learning, tecnología, innovación, ChatGPT, automatización, blockchain, metaverso">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="TrendSphere - Tendencias en Redes Sociales">
-    <meta property="og:description" content="Las últimas tendencias en redes sociales y marketing digital">
+    <meta property="og:title" content="TechSphere - IA y Tecnología del Futuro">
+    <meta property="og:description" content="Las últimas tendencias en Inteligencia Artificial y tecnología emergente">
     <meta property="og:type" content="website">
     
     <style>
@@ -22,19 +22,21 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             min-height: 100vh;
+            color: #ffffff;
         }
 
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(20px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
         }
 
         .nav-container {
@@ -49,10 +51,11 @@
         .logo {
             font-size: 2rem;
             font-weight: 800;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
         }
 
         .nav-menu {
@@ -63,62 +66,108 @@
 
         .nav-menu a {
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-menu a:hover {
-            color: #667eea;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         .hero {
             padding: 8rem 2rem 4rem;
             text-align: center;
-            color: white;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff, #ff0080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5)); }
+            to { filter: drop-shadow(0 0 30px rgba(128, 0, 255, 0.8)); }
         }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            color: #cccccc;
         }
 
         .cta-button {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(45deg, #00ffff, #8000ff);
             color: white;
             padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5);
         }
 
         /* Main Content */
         .main-content {
-            background: white;
-            border-radius: 20px 20px 0 0;
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%);
+            border-radius: 30px 30px 0 0;
             margin-top: 2rem;
             min-height: 100vh;
+            backdrop-filter: blur(20px);
         }
 
         .container {
@@ -127,16 +176,17 @@
             padding: 3rem 2rem;
         }
 
-        /* Ad Space - Top Banner */
+        /* Ad Space - AI Tools Banner */
         .ad-banner {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 15px;
+            background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
+            border-radius: 20px;
             padding: 2rem;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
             position: relative;
             overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .ad-banner::before {
@@ -146,26 +196,28 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 4s linear infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .ad-banner h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
             position: relative;
             z-index: 1;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         .ad-banner p {
             position: relative;
             z-index: 1;
-            opacity: 0.9;
+            opacity: 0.95;
+            font-size: 1.1rem;
         }
 
         /* Trending Section */
@@ -174,71 +226,115 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 2rem;
             text-align: center;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            font-weight: 800;
         }
 
         .trending-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
         .trend-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
             cursor: pointer;
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .trend-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ffff, #8000ff, #ff0080, #00ffff);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .trend-card:hover::before {
+            opacity: 1;
         }
 
         .trend-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 255, 255, 0.2);
         }
 
         .trend-image {
-            height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            height: 220px;
+            background: linear-gradient(45deg, #0f0f23, #1a1a2e, #16213e);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
+            color: #00ffff;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trend-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
         }
 
         .trend-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .trend-tag {
-            background: #667eea;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
             display: inline-block;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .trend-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
             line-height: 1.4;
+            font-weight: 700;
         }
 
         .trend-description {
-            color: #666;
-            margin-bottom: 1rem;
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .trend-stats {
@@ -251,91 +347,127 @@
         /* Sidebar Ad */
         .content-wrapper {
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr 320px;
             gap: 3rem;
             margin-top: 2rem;
         }
 
         .sidebar {
             position: sticky;
-            top: 100px;
+            top: 120px;
             height: fit-content;
         }
 
         .sidebar-ad {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(128, 0, 255, 0.1) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
             padding: 2rem;
             text-align: center;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .sidebar-ad:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
         }
 
         .sidebar-ad h4 {
-            color: #333;
+            color: #00ffff;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         .sidebar-ad p {
-            color: #666;
+            color: #cccccc;
             font-size: 0.9rem;
         }
 
         /* Newsletter */
         .newsletter {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 30px;
             padding: 3rem;
             text-align: center;
             color: white;
             margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.05) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
         }
 
         .newsletter h3 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         .newsletter-form {
             display: flex;
             gap: 1rem;
-            max-width: 400px;
+            max-width: 500px;
             margin: 2rem auto 0;
+            position: relative;
+            z-index: 1;
         }
 
         .newsletter-form input {
             flex: 1;
-            padding: 1rem;
-            border: none;
+            padding: 1.2rem;
+            border: 2px solid rgba(0, 255, 255, 0.3);
             border-radius: 50px;
             font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .newsletter-form button {
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(45deg, #00ffff, #8000ff);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            padding: 1rem 2rem;
+            border: none;
+            padding: 1.2rem 2rem;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .newsletter-form button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
         }
 
         /* Footer */
         .footer {
-            background: #333;
+            background: #0a0a15;
             color: white;
-            padding: 3rem 2rem 2rem;
+            padding: 4rem 2rem 2rem;
             text-align: center;
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
         }
 
         .footer-content {
@@ -343,13 +475,14 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h4 {
-            margin-bottom: 1rem;
-            color: #667eea;
+            margin-bottom: 1.5rem;
+            color: #00ffff;
+            font-size: 1.3rem;
         }
 
         .footer-section ul {
@@ -357,30 +490,31 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .footer-section a {
-            color: #ccc;
+            color: #cccccc;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .footer-section a:hover {
-            color: #667eea;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
         }
 
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin: 3rem 0;
         }
 
         .social-icon {
-            width: 50px;
-            height: 50px;
-            background: #667eea;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -388,11 +522,74 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 1.5rem;
         }
 
         .social-icon:hover {
-            transform: scale(1.1);
-            background: #764ba2;
+            transform: scale(1.2);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Interactive Stats */
+        .interactive-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(128, 0, 255, 0.1) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            backdrop-filter: blur(20px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #cccccc;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(0, 255, 255, 0.1);
+            border-top: 3px solid #00ffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Responsive Design */
@@ -417,73 +614,16 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Interactive Elements */
-        .interactive-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .stat-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #666;
-            font-weight: 500;
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">TrendSphere</div>
+            <div class="logo">TechSphere</div>
             <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#tendencias">Tendencias</a></li>
+                <li><a href="#tendencias">IA & Tech</a></li>
                 <li><a href="#analytics">Analytics</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -493,9 +633,9 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <h1>Las Tendencias que Están Cambiando el Mundo Digital</h1>
-        <p>Descubre las últimas tendencias en redes sociales, estrategias de marketing viral y el contenido que está revolucionando la forma en que nos conectamos.</p>
-        <a href="#tendencias" class="cta-button">Explorar Tendencias</a>
+        <h1>El Futuro de la IA y la Tecnología</h1>
+        <p>Descubre las últimas innovaciones en Inteligencia Artificial, tecnologías emergentes y las tendencias que están revolucionando nuestro mundo digital y transformando industrias completas.</p>
+        <a href="#tendencias" class="cta-button">Explorar Tecnologías</a>
     </section>
 
     <!-- Main Content -->
@@ -503,27 +643,27 @@
         <div class="container">
             <!-- Top Banner Ad -->
             <div class="ad-banner">
-                <h3>🚀 Impulsa tu Marca en Redes Sociales</h3>
-                <p>Herramientas profesionales para creadores de contenido y empresas. ¡Prueba gratis por 30 días!</p>
+                <h3>🤖 Herramientas de IA Revolucionarias</h3>
+                <p>Automatiza tu trabajo con las mejores herramientas de Inteligencia Artificial. ¡Incrementa tu productividad 10x!</p>
             </div>
 
             <!-- Interactive Stats -->
             <div class="interactive-stats">
                 <div class="stat-card" onclick="animateCard(this)">
-                    <div class="stat-number" data-target="5.2">0</div>
-                    <div class="stat-label">Mil Millones de Usuarios en Instagram</div>
+                    <div class="stat-number" data-target="175">0</div>
+                    <div class="stat-label">Mil Millones invertidos en IA 2024</div>
                 </div>
                 <div class="stat-card" onclick="animateCard(this)">
-                    <div class="stat-number" data-target="1.7">0</div>
-                    <div class="stat-label">Mil Millones en TikTok</div>
+                    <div class="stat-number" data-target="40">0</div>
+                    <div class="stat-label">% de empresas usan IA</div>
                 </div>
                 <div class="stat-card" onclick="animateCard(this)">
-                    <div class="stat-number" data-target="2.9">0</div>
-                    <div class="stat-label">Mil Millones en YouTube</div>
+                    <div class="stat-number" data-target="15.7">0</div>
+                    <div class="stat-label">Billones mercado IA para 2030</div>
                 </div>
                 <div class="stat-card" onclick="animateCard(this)">
-                    <div class="stat-number" data-target="3.0">0</div>
-                    <div class="stat-label">Mil Millones en Facebook</div>
+                    <div class="stat-number" data-target="97">0</div>
+                    <div class="stat-label">Millones trabajos impactados</div>
                 </div>
             </div>
 
@@ -531,268 +671,104 @@
                 <div class="main-column">
                     <!-- Trending Section -->
                     <section class="trending-section" id="tendencias">
-                        <h2 class="section-title">🔥 Tendencias Virales Actuales</h2>
+                        <h2 class="section-title">🚀 Tendencias Tech Mundiales</h2>
                         
                         <div class="trending-grid">
                             <article class="trend-card" onclick="openTrendDetail(1)">
-                                <div class="trend-image">📱</div>
+                                <div class="trend-image">🤖</div>
                                 <div class="trend-content">
-                                    <span class="trend-tag">TikTok</span>
-                                    <h3 class="trend-title">Challenges de Baile Minimalistas</h3>
-                                    <p class="trend-description">Los nuevos retos virales se caracterizan por movimientos simples pero efectivos que cualquiera puede replicar en espacios pequeños.</p>
+                                    <span class="trend-tag">IA Generativa</span>
+                                    <h3 class="trend-title">ChatGPT-5 y Modelos Multimodales</h3>
+                                    <p class="trend-description">Los nuevos modelos de IA pueden procesar texto, imagen, audio y video simultáneamente, revolucionando la creación de contenido y automatización empresarial a nivel global.</p>
                                     <div class="trend-stats">
-                                        <span>👀 2.5M vistas</span>
-                                        <span>📈 +340% crecimiento</span>
+                                        <span>🌍 180M usuarios activos</span>
+                                        <span>📈 +2400% crecimiento anual</span>
                                     </div>
                                 </div>
                             </article>
 
                             <article class="trend-card" onclick="openTrendDetail(2)">
-                                <div class="trend-image">🎨</div>
+                                <div class="trend-image">🧠</div>
                                 <div class="trend-content">
-                                    <span class="trend-tag">Instagram</span>
-                                    <h3 class="trend-title">Aesthetic Cottagecore Digital</h3>
-                                    <p class="trend-description">La nostalgia rural se digitaliza con filtros que recrean la vida campestre, generando engagement masivo entre Gen Z.</p>
+                                    <span class="trend-tag">Neuromorphic Computing</span>
+                                    <h3 class="trend-title">Chips que Imitan el Cerebro Humano</h3>
+                                    <p class="trend-description">Intel, IBM y startups desarrollan procesadores que replican la estructura neuronal, prometiendo computación ultra-eficiente y aprendizaje continuo en tiempo real.</p>
                                     <div class="trend-stats">
-                                        <span>👀 4.1M vistas</span>
-                                        <span>📈 +285% crecimiento</span>
+                                        <span>🌍 $1.2B inversión global</span>
+                                        <span>📈 +890% eficiencia energética</span>
                                     </div>
                                 </div>
                             </article>
 
                             <article class="trend-card" onclick="openTrendDetail(3)">
-                                <div class="trend-image">🤖</div>
+                                <div class="trend-image">🔮</div>
                                 <div class="trend-content">
-                                    <span class="trend-tag">YouTube</span>
-                                    <h3 class="trend-title">IA como Co-creador de Contenido</h3>
-                                    <p class="trend-description">Creadores están colaborando con IA para generar guiones, thumbnails y música, creando un nuevo paradigma creativo.</p>
+                                    <span class="trend-tag">Computación Cuántica</span>
+                                    <h3 class="trend-title">Google y IBM Alcanzan Supremacía Cuántica</h3>
+                                    <p class="trend-description">Los nuevos procesadores cuánticos de 1000+ qubits están resolviendo problemas imposibles para computadoras clásicas, transformando criptografía, medicina y finanzas.</p>
                                     <div class="trend-stats">
-                                        <span>👀 8.7M vistas</span>
-                                        <span>📈 +520% crecimiento</span>
+                                        <span>🌍 50+ países invertidos</span>
+                                        <span>📈 +1500% velocidad cálculos</span>
                                     </div>
                                 </div>
                             </article>
 
                             <article class="trend-card" onclick="openTrendDetail(4)">
-                                <div class="trend-image">🎵</div>
+                                <div class="trend-image">🚗</div>
                                 <div class="trend-content">
-                                    <span class="trend-tag">Multi-plataforma</span>
-                                    <h3 class="trend-title">Micro-Podcasts de 60 Segundos</h3>
-                                    <p class="trend-description">El formato de audio ultra-corto está revolucionando el consumo de contenido educativo y de entretenimiento.</p>
+                                    <span class="trend-tag">Autonomous Vehicles</span>
+                                    <h3 class="trend-title">Tesla FSD y Waymo Escalan Globalmente</h3>
+                                    <p class="trend-description">Los vehículos autónomos Level 4 y 5 están desplegándose masivamente en China, EE.UU. y Europa, prometiendo revolucionar el transporte urbano y la logística mundial.</p>
                                     <div class="trend-stats">
-                                        <span>👀 1.9M reproducciones</span>
-                                        <span>📈 +410% crecimiento</span>
+                                        <span>🌍 2.5M vehículos autónomos</span>
+                                        <span>📈 +340% adopción empresarial</span>
                                     </div>
                                 </div>
                             </article>
 
                             <article class="trend-card" onclick="openTrendDetail(5)">
-                                <div class="trend-image">🛍️</div>
+                                <div class="trend-image">🥽</div>
                                 <div class="trend-content">
-                                    <span class="trend-tag">Social Commerce</span>
-                                    <h3 class="trend-title">Live Shopping Experiences</h3>
-                                    <p class="trend-description">Las transmisiones en vivo para compras están redefiniendo el e-commerce con interacción en tiempo real.</p>
+                                    <span class="trend-tag">Mixed Reality</span>
+                                    <h3 class="trend-title">Apple Vision Pro y Meta Quest Dominan</h3>
+                                    <p class="trend-description">La realidad mixta está transformando educación, trabajo remoto y entretenimiento, con dispositivos que mezclan perfectamente mundo físico y digital.</p>
                                     <div class="trend-stats">
-                                        <span>👀 6.3M vistas</span>
-                                        <span>📈 +670% crecimiento</span>
+                                        <span>🌍 31M dispositivos vendidos</span>
+                                        <span>📈 +670% mercado empresarial</span>
                                     </div>
                                 </div>
                             </article>
 
                             <article class="trend-card" onclick="openTrendDetail(6)">
-                                <div class="trend-image">🌍</div>
+                                <div class="trend-image">🔗</div>
                                 <div class="trend-content">
-                                    <span class="trend-tag">LinkedIn</span>
-                                    <h3 class="trend-title">Personal Branding Auténtico</h3>
-                                    <p class="trend-description">Los profesionales comparten historias personales y vulnerabilidades, humanizando las marcas corporativas.</p>
+                                    <span class="trend-tag">Web3 & Blockchain</span>
+                                    <h3 class="trend-title">DeFi y NFTs Evolucionan hacia Utilidad Real</h3>
+                                    <p class="trend-description">Ethereum 2.0 y Layer 2 están democratizando finanzas descentralizadas, mientras NFTs se transforman en herramientas de identidad digital y propiedad intelectual.</p>
                                     <div class="trend-stats">
-                                        <span>👀 3.2M vistas</span>
-                                        <span>📈 +195% crecimiento</span>
+                                        <span>🌍 $2.3T valor total bloqueado</span>
+                                        <span>📈 +195% adopción institucional</span>
                                     </div>
                                 </div>
                             </article>
-                        </div>
 
-                        <div class="loading" id="loading">
-                            <div class="spinner"></div>
-                            <p>Cargando más tendencias...</p>
-                        </div>
-                    </section>
-                </div>
+                            <article class="trend-card" onclick="openTrendDetail(7)">
+                                <div class="trend-image">🔋</div>
+                                <div class="trend-content">
+                                    <span class="trend-tag">Green Tech</span>
+                                    <h3 class="trend-title">Baterías de Estado Sólido Revolucionan Energía</h3>
+                                    <p class="trend-description">Toyota, Samsung y startups lanzan baterías que cargan en minutos y duran décadas, acelerando la transición energética global y vehículos eléctricos masivos.</p>
+                                    <div class="trend-stats">
+                                        <span>🌍 $45B inversión global</span>
+                                        <span>📈 +800% densidad energética</span>
+                                    </div>
+                                </div>
+                            </article>
 
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <div class="sidebar-ad">
-                        <h4>📊 Analytics Pro</h4>
-                        <p>Analiza el rendimiento de tu contenido con métricas avanzadas y predicciones de viralidad.</p>
-                    </div>
-
-                    <div class="sidebar-ad">
-                        <h4>🎯 Targeting Inteligente</h4>
-                        <p>Encuentra tu audiencia perfecta con algoritmos de machine learning.</p>
-                    </div>
-
-                    <div class="sidebar-ad">
-                        <h4>🔔 Alertas de Tendencias</h4>
-                        <p>Recibe notificaciones cuando una nueva tendencia esté emergiendo en tu nicho.</p>
-                    </div>
-                </aside>
-            </div>
-
-            <!-- Newsletter Section -->
-            <section class="newsletter" id="newsletter">
-                <h3>🚀 Mantente Actualizado</h3>
-                <p>Recibe las últimas tendencias, estrategias y oportunidades de monetización directamente en tu email.</p>
-                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                    <input type="email" placeholder="tu@email.com" required>
-                    <button type="submit">Suscribirse</button>
-                </form>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer" id="contacto">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Plataformas</h4>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">TikTok</a></li>
-                    <li><a href="#">YouTube</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Twitter/X</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Recursos</h4>
-                <ul>
-                    <li><a href="#">Guías de Tendencias</a></li>
-                    <li><a href="#">Herramientas</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Monetización</a></li>
-                    <li><a href="#">Cursos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Empresa</h4>
-                <ul>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Carreras</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Prensa</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">GDPR</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="social-icons">
-            <a href="#" class="social-icon">📘</a>
-            <a href="#" class="social-icon">📷</a>
-            <a href="#" class="social-icon">🎵</a>
-            <a href="#" class="social-icon">📺</a>
-            <a href="#" class="social-icon">🐦</a>
-        </div>
-
-        <p>&copy; 2025 TrendSphere. Todos los derechos reservados.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animate statistics
-        function animateCard(card) {
-            const number = card.querySelector('.stat-number');
-            const target = parseInt(number.getAttribute('data-target'));
-            let current = 0;
-            const increment = target / 100;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                number.textContent = current.toFixed(1);
-            }, 20);
-
-            // Add animation effect
-            card.style.transform = 'scale(1.05)';
-            setTimeout(() => {
-                card.style.transform = 'scale(1)';
-            }, 200);
-        }
-
-        // Auto-animate stats on scroll
-        function animateStatsOnScroll() {
-            const stats = document.querySelector('.interactive-stats');
-            const rect = stats.getBoundingClientRect();
-            
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                document.querySelectorAll('.stat-card').forEach((card, index) => {
-                    setTimeout(() => {
-                        animateCard(card);
-                    }, index * 200);
-                });
-            }
-        }
-
-        let statsAnimated = false;
-        window.addEventListener('scroll', () => {
-            if (!statsAnimated) {
-                animateStatsOnScroll();
-                statsAnimated = true;
-            }
-        });
-
-        // Trend detail functionality
-        function openTrendDetail(id) {
-            const trends = {
-                1: {
-                    title: "Challenges de Baile Minimalistas",
-                    content: "Esta tendencia ha revolucionado TikTok al democratizar los challenges de baile. A diferencia de las coreografías complejas del pasado, estos nuevos retos se centran en movimientos simples pero hipnóticos que pueden realizarse en espacios reducidos. La clave está en la repetición y la música pegajosa que acompaña cada challenge."
-                },
-                2: {
-                    title: "Aesthetic Cottagecore Digital",
-                    content: "El cottagecore digital combina la nostalgia por la vida rural con la estética moderna de las redes sociales. Los usuarios recrean ambientes campestres usando filtros especializados, colores tierra y elementos naturales, generando una escapada virtual de la vida urbana acelerada."
-                },
-                3: {
-                    title: "IA como Co-creador de Contenido",
-                    content: "Los creadores están adoptando herramientas de IA no como reemplazo, sino como colaboradores creativos. Desde la generación de ideas hasta la creación de thumbnails y música, la IA está permitiendo que los creators se enfoquen más en la narrativa y conexión con su audiencia."
-                },
-                4: {
-                    title: "Micro-Podcasts de 60 Segundos",
-                    content: "El formato de audio ultra-corto responde a la necesidad de consumo rápido de información. Estos micro-podcasts condensan insights valiosos, tips educativos o entretenimiento en exactamente 60 segundos, optimizando la atención fragmentada de las audiencias modernas."
-                },
-                5: {
-                    title: "Live Shopping Experiences",
-                    content: "Las transmisiones en vivo para compras están transformando el e-commerce al recrear la experiencia de compra presencial en el mundo digital. Los viewers pueden hacer preguntas en tiempo real, ver productos en acción y aprovechar ofertas exclusivas durante la transmisión."
-                },
-                6: {
-                    title: "Personal Branding Auténtico",
-                    content: "LinkedIn está experimentando una humanización radical donde los profesionales comparten no solo logros, sino también fracasos, aprendizajes y vulnerabilidades. Esta autenticidad está generando mayor engagement y construcción de comunidades profesionales más sólidas."
-                }
-            };
-
-            const trend = trends[id];
+                            <article class="trend-card" onclick="openTrendDetail(8)">
+                                <div class="trend-image">🦾</div>
+                                <div class="trend-content">
+                                    <span class="trend-tag">Humanoid Robots</span>
+                                    <h3 class="trend-title">Tesla Bot y Boston Dynamics en Fábricas</h3>
+                                    <p class="trend-description">Robots humanoides con IA avanzada están ingresando a fábricas, almacenes y hogares, automatizando tareas complejas que requieren destreza humana.</p>
+                                    <div class="trend-stats">
